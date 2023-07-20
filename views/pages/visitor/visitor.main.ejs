@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../common/links.ejs')  %>
+</head>
+
+<body>
+    <div class="container">
+        
+        <%- include('../../common/nav.ejs') %>
+
+        
+        <main class="container">
+            <div class="row d-flex flex-column mb-5">
+                <% for(var i=0;i < value.length;i++){ %>
+                    <div class="col-md-6 mx-auto post mt-4">
+                        <div class="card border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div class="card-title">
+                                        <img src="images/Sittwe market place.png" alt="profile" class="profile">
+                                        <b>
+                                            <%= value[i].seller_name %>
+                                        </b>
+                                    </div>
+                                </div>
+                                <div class="card-text">
+                                    <%= value[i].description %> <br>
+                                        Products quantity : <%= value[i].qty %> Products Unit Price : <%=
+                                                value[i].unit_price %>
+                                </div>
+                                <img src="<%= value[i].post_img %>" alt="" class="card-img mt-2">
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+        </main>
+    </div>
+
+    <%- include('../../common/script.ejs')%>
+</body>
+
+</html>

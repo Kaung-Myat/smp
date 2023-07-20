@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../../common/links.ejs") %>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../../common/nav.buyer.ejs') %>
+            <main class="container">
+                <div class="dropdown">
+                    <div class="d-flex justify-content-end mt-5">
+                        <i class="fa-solid fa-bars fs-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="cursor: pointer;"></i>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/buyer/login"><i
+                                        class="fa-solid fa-right-from-bracket me-2"></i>LogOut</a>
+                            </li>
+                            <li><a class="dropdown-item btnEditProfile" href="" data-bs-toggle="modal"
+                                    data-bs-target="#eidtProfile"><i class="fa-solid fa-pencil me-2"></i>Edit
+                                    Profile Info</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="eidtProfile" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Profile Info</h1>
+                            </div>
+                            <div class="modal-body">
+                                <form id="buyerProfileEditFrm">
+                                    <div class="col">
+                                        <input type="text" name="edit_sellerId" class="form-control buyerId"
+                                            id="floatingInput" placeholder="Name" value="<%= buyerid %>" hidden>
+                                        <div class="form-floating mb-5">
+                                            <input type="text" name="edit_buyername" class="form-control buyerName"
+                                                id="floatingInput" placeholder="Name">
+                                            <label for="floatingInput">Name</label>
+                                        </div>
+                                        <div class="form-floating mb-5">
+                                            <input type="email" name="edit_buyeremail" class="form-control buyerEmail"
+                                                id="floatingInput" placeholder="name@example.com">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                        <div class="form-floating mb-5">
+                                            <input type="number" name="edit_buyerphone" class="form-control buyerPhNo"
+                                                id="floatingInput" placeholder="Phone Number">
+                                            <label for="floatingInput">Phone Number</label>
+                                        </div>
+                                        <div class="form-floating">
+                                            <input type="text" name="edit_buyeradd" class="form-control buyerAddr"
+                                                id="floatingPassword" placeholder="Address">
+                                            <label for="floatingPassword">Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cancle</button>
+                                        <input type="submit" class="btn" data-bs-dismiss="modal"
+                                            style="background-color: orange;" value="Save">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <img src="<%= buyerImg %>"
+                        alt="" width="100px">
+                </div>
+                <div class="text-center mt-4">
+                    <p class="h4">
+                        <%= buyername %>
+                    </p>
+                </div>
+                <div class="d-md-block d-none card mt-5 w-75 m-auto" style="z-index: -10000;">
+                    <div class="card-body">
+                        <p class="card-title h5">Preorder Confirm Notifications</p>
+                    </div>
+                </div>
+                <div class="d-md-none d-block card mt-4 w-100">
+                    <div class="card-body">
+                        <p class="card-title h5">Preorder Confirm Notifications</p>
+                    </div>
+                </div>
+
+                <div class="d-md-block d-none card mt-5 mb-5 w-75 m-auto" style="z-index: -10000;">
+                    <div class="d-flex flex-column border-3">
+                        <div class="card w-75 m-auto mt-4 p-3 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                        <div class="card w-75 m-auto mt-4 p-3 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                        <div class="card w-75 m-auto mt-4 p-3 mb-4 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-md-none d-block card mt-5 mb-5 w-100 m-auto">
+                    <div class="d-flex flex-column border-3">
+                        <div class="card w-75 m-auto mt-4 p-3 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                        <div class="card w-75 m-auto mt-4 p-3 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                        <div class="card w-75 m-auto mt-4 p-3 mb-4 border-3">
+                            <div class="d-flex justify-content-end fs-5"><i class="fa-solid fa-xmark"></i></div>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                                ullam ut sapiente unde
+                                voluptas fugit, ratione accusamus harum sint nam est minima nihil in illo. Dicta nemo
+                                cupiditate perspiciatis officiis?</p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+    </div>
+
+    <%- include("../../common/script.ejs") %>
+        <script src="/javascripts/buyer.js"></script>
+</body>
+
+</html>

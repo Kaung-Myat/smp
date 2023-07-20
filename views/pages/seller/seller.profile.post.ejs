@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../../common/links.ejs") %>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('../../common/nav.seller.ejs') %>
+            <main class="container">
+                <div class="dropdown">
+                    <div class="d-flex justify-content-end mt-5">
+                        <i class="fa-solid fa-bars fs-4" data-bs-toggle="dropdown" aria-expanded="false"
+                            style="cursor: pointer;"></i>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/seller/login"><i
+                                        class="fa-solid fa-right-from-bracket me-2"></i>LogOut</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/seller/profile"><i
+                                        class="fa-solid fa-user me-2"></i>Profile</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/seller/profile/posts"><i
+                                        class="fa-solid fa-upload me-2"></i>Posts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- post seller profile -->
+                <div class="mb-3" id="page1">
+                    <div class="row d-flex flex-column mb-5">
+                        <% for(var i=0;i<value.length;i++){ %>
+                            <div class="col-md-6 mx-auto post mt-4">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="card-title">
+                                                <!-- <img src="images/Sittwe market place.png"
+                                                    alt="profile" class="profile"> -->
+                                                <b>
+                                                    <%= value[i].seller_name %>
+                                                </b>
+                                            </div>
+                                            <div class="mt-2 btn dropdown postBtn" data-bs-toggle="dropdown"
+                                                aria-expanded="false"><i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </div>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item btnEditPost" data-bs-toggle="modal"
+                                                        data-bs-target="#<%=value[i].id%>" data-id="<%=value[i].id%>"><i
+                                                            class="fa-solid fa-pencil me-2"></i>Edit</a></li>
+                                                <li><a class="dropdown-item btnDeletePost" data-id="<%=value[i].id%>"><i
+                                                            class="fa-solid fa-trash-can me-2"></i>Delete</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="card-text">
+                                            <%= value[i].description %> <br>
+                                                Products quantity : <%= value[i].qty %> Products Unit Price : <%=
+                                                        value[i].unit_price %>
+                                        </div>
+                                        <img src="<%= value[i].post_img %>" alt="" class="card-img mt-2">
+                                    </div>
+                                </div>
+                            </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <!--Edit Posts Modal -->
+                <div class="modal fade modalEdit" tabindex="-1" aria-labelledby="editPostModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Posts</h1>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" id="postD" class="d-sm-none d-lg-none d-none d-md-none" readonly>
+                                <form id="editPostForm">
+                                    <div class="col">
+                                        <!-- 
+                                        <input type="text" name="edit_sellerId" class="form-control sellerId"
+                                            id="edit_seller_id" placeholder="Name" hidden> -->
+                                        <div class="form-floating mb-5">
+                                            <input type="text" name="edit_description"
+                                                class="form-control postDescription" id="edit_seller_desc"
+                                                placeholder="description...">
+                                            <label for="floatingInput">Description</label>
+                                        </div>
+                                        <div class="form-floating mb-5">
+                                            <input type="text" name="edit_qty" class="form-control postQuantity"
+                                                id="floatingInput" placeholder="quantity...">
+                                            <label for="floatingInput">Quantity</label>
+                                        </div>
+                                        <div class="form-floating mb-5">
+                                            <input type="text" name="edit_unitPrice" class="form-control postUnitPrice"
+                                                id="floatingInput" placeholder="unit price...">
+                                            <label for="floatingInput">Unit Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer float-end">
+                                        <input type="submit" class="btn btn-warning text-light" value="Save">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+    </div>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <%- include("../../common/script.ejs") %>
+        <script src="/javascripts/seller.js"></script>
+
+</body>
+
+</html>

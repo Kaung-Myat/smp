@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../common/links.ejs') %>
+</head>
+
+<body>
+  <div class="container-fluid" >
+    <div class="row g-0">
+      <%- include('../../common/nav.admin.ejs') %>
+      <main class="col-10 vh-100">
+        <%- include('../../common/nav.admin.main.ejs') %>
+        <div class="container-fluid mt-3 p-4 vh-100" style="background-color: rgb(236, 236, 236);">
+          <div class="row flex-column flex-lg-row">
+            <h2 class="h6 text-black">QUICK STATS</h2>
+            <div class="col">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3 class="card-title h2" id="buyerCount"><%= buyerCount %></h3>
+                  <span class="text-success">
+                    <i class="fas fa-chart-line"></i>
+                    Number of buyers
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h3 class="card-title h2" id="sellerCount"><%= sellerCount %></h3>
+                  <span class="text-success">
+                    <i class="fas fa-chart-line"></i>
+                    Number of sellers
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+      <footer class="text-center py-4 text-muted">
+        Developed with love by <b>Team Data Sonic</b>
+      </footer>
+    </div>
+  </div>
+  <%- include('../../common/script.ejs')%>
+    <script src="/javascripts/admin.js"></script>
+</body>
+
+</html>

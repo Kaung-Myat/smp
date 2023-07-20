@@ -1,0 +1,83 @@
+body{
+    overflow-x: hidden;
+}
+/* navbar part */
+.navBrand{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #efefef;
+    border: 2px solid #d2d2d2;
+}
+
+.navItem:hover{
+    color: orange;
+}
+
+
+
+.hoverTab{
+    position: fixed;
+    right: 6%;
+    transform: translateY(-5px);
+    justify-content: flex-end;
+}
+
+.hoverHome,.hoverProfile,.hoverAbout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 3px;
+}
+
+/*end of navbar part*/
+
+/* main */
+.profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #efefef;
+    border: 2px solid #d2d2d2;
+}
+
+.post{
+    box-shadow: 0 0 10px #efefef;
+    border: 2px solid #e9e9e9;
+    border-radius: 15px;
+}
+
+.reactSection:hover{
+    background-color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.aboutSocial{
+    color: rgb(83, 83, 83);
+}
+
+.aboutSocial:hover{
+    color: orange;
+}
+
+.backBtn{
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgb(135, 135, 135);
+}
+
+.backBtn:active{
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgb(135, 135, 135);
+}
+
+.promptText:hover{
+    text-shadow: 0 0 10px orange;
+}
+

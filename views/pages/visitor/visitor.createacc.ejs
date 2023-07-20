@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../common/links.ejs')  %>
+</head>
+
+<body>
+    <div class="container">
+
+        <%- include('../../common/nav.ejs') %>
+
+        <main class="container">
+            <h3 class="mt-5 text-center">Hello There!</h3>
+            <h5 class="text-center mt-3">Meeting and Selling Here!!</h5>
+            <div class="d-flex justify-content-center mt-5">
+                <select class="form-select w-50 mt-4 mb-4" id="selectBox" aria-label="Default select example"
+                    onInput="roleChange()">
+                    <option selected disabled>Select Option</option>
+                    <option value="1">Seller</option>
+                    <option value="2">Buyer</option>
+                </select>
+            </div>
+            <div id="seller">
+                <div class="d-flex justify-content-center mt-5">
+                    <img class="w-50 card-img d-md-block d-none" src="images/about.png" alt="">
+                    <img class="w-75 card-img d-md-none d-block" src="images/about.png" alt="">
+                </div>
+                <div class="d-md-flex d-none align-items-center flex-column mt-5 mb-5">
+                    <a href="/seller/login" class="btn w-50 fs-5 rounded-5" style="background-color: #5B7C99;color: white;">Login as a seller</a>
+                    <a href="/seller/create" class="btn w-50 mt-4 fs-5 rounded-5" style="background-color: #FF8C42;color: white;">Sign up as a seller</a>
+                </div>
+                <div class="d-flex d-md-none align-items-center flex-column mt-5 mb-5">
+                    <a href="/seller/login" class="btn w-75 fs-5 rounded-5" style="background-color: #5B7C99;color: white;">Login as a seller</a>
+                    <a href="/seller/create" class="btn w-75 mt-4 fs-5 rounded-5" style="background-color: #FF8C42;color: white;">Sign up as a seller</a>
+                </div>
+            </div>
+            <div id="buyer" style="display: none;">
+                <div class="d-flex justify-content-center mt-5">
+                    <img class="w-50 card-img d-md-block d-none" src="images/about.png" alt="">
+                    <img class="w-75 card-img d-md-none d-block" src="images/about.png" alt="">
+                </div>
+                <div class="d-md-flex d-none align-items-center flex-column mt-5 mb-5">
+                    <a href="/buyer/login" class="btn w-50 fs-5 rounded-5" style="background-color: #5B7C99;color: white;">Login as buyer</a>
+                    <a href="/buyer/create" class="btn w-50 mt-4 fs-5 rounded-5" style="background-color: #FF8C42;color: white;">Sign up as a buyer</a>
+                </div>
+                <div class="d-flex d-md-none align-items-center flex-column mt-5 mb-5">
+                    <a href="/buyer/login" class="btn w-75 fs-5 rounded-5" style="background-color: #5B7C99;color: white;">Login as a buyer</a>
+                    <a href="/buyer/create" class="btn w-75 mt-4 fs-5 rounded-5" style="background-color: #FF8C42;color: white;">Sign up as a buyer</a>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+
+    <%- include('../../common/script.ejs')  %>
+    <script>
+        var seller = document.getElementById('seller');
+        var buyer = document.getElementById('buyer');
+        var selectBox = document.getElementById('selectBox');
+
+        function roleChange() {
+            if (selectBox.value == 1) {
+                seller.style.display = 'block';
+                buyer.style.display = 'none';
+            } else {
+                seller.style.display = 'none';
+                buyer.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

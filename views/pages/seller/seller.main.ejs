@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../common/links.ejs') %>
+</head>
+
+<body>
+    <div class="container">
+
+        <%- include('../../common/nav.seller.ejs') %>
+
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" rows="3" autofocus></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn w-25 rounded-5 msgSendBtn">Send<i class="fa-solid fa-paper-plane ms-2"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+            <main class="container">
+                <div class="row d-flex flex-column mb-5">
+                    <% for(var i=0;i < value.length;i++){ %>
+                        <div class="col-md-6 mx-auto post mt-4">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="card-title">
+                                            <img src="images/Sittwe market place.png"
+                                                alt="profile" class="profile">
+                                           <b><%= value[i].seller_name %></b> 
+                                        </div>
+                                    </div>
+                                    <div class="card-text">
+                                        <%= value[i].description %> <br>
+                                        Products quantity : <%= value[i].qty %> Products Unit Price : <%= value[i].unit_price %>
+                                    </div>
+                                    <img src="<%= value[i].post_img %>" alt="" class="card-img mt-2">
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+            </main>
+    </div>
+
+    <%- include('../../common/script.ejs') %>
+</body>
+
+</html>

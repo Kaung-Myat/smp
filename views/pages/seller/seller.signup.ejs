@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../common/links.ejs') %>
+</head>
+<body>
+    <div class="container">
+        <a href="/create" class="btn rounded-circle backBtn m-3 mt-4"><i class="fa-solid fa-chevron-left"></i></a>
+        <main class="container">
+            <div class="text-center mt-5">
+                <h3>Sign up</h3>
+                <h5 class="mt-3">Create an Account,It's free</h5>
+            </div>
+            <div class=" row w-75 m-auto mt-5">
+                <form id="sellerSignupFrm">
+                    <div class="col">
+                        <div class="form-floating mb-5 ">
+                            <input type="text" name="seller_name" class="form-control" id="floatingInput" placeholder="Name">
+                            <label for="floatingInput">Name</label>
+                        </div>
+                        <div class="form-floating mb-5">
+                            <input type="email" name="seller_email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <div class="form-floating mb-5">
+                            <input type="password" name="seller_pass" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-5">
+                            <input type="number" name="seller_phone" class="form-control" id="floatingInput" placeholder="Phone Number">
+                            <label for="floatingInput">Phone Number</label>
+                        </div>
+                        <div class="form-floating mb-5">
+                            <input type="text" name="seller_add" class="form-control" id="floatingPassword" placeholder="Address">
+                            <label for="floatingPassword">Address</label>
+                        </div>
+                        <div class="">
+                            <input type="file" name="seller_img" class="form-control" id="floatingInput">
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center flex-column mt-5 mb-3">
+                        <input type="submit" class="btn w-50 fs-5 rounded-5" style="background-color: #FF8C42;color: white;" value="Save">
+                    </div>
+                </form>
+            </div>
+            <p class=" mb-5 text-center">Already have an account?<a href="#" class="promptText" style="text-decoration: none; color: orange;">Login</a></p>
+        </main>
+    </div>
+    
+    <%- include('../../common/script.ejs') %>
+    <script src="/javascripts/seller.js"></script>
+</body>
+</html>
